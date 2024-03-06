@@ -1,0 +1,43 @@
+<div class="card bike-details-card">
+  <div class="row g-0 mb-2">
+    <div class="col-6">
+      @if (bikeDetails?.thumb) {
+      <img [src]="bikeDetails?.thumb" alt="bike photo" class="bike-details-card__photo">
+      } @else {
+      <img src="/assets/no-bike.svg" alt="No bike photo" class="bike-details-card__photo">
+      }
+    </div>
+    <div class="col-6">
+      <div class="card-body">
+        <h2 class="bike-details-card__title">{{bikeDetails?.title || bikeDetails?.manufacturer_name}}</h2>
+      </div>
+      <ul class="list-group list-group-flush bike-details-list">
+        <li  class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Name:</span> {{bikeDetails?.manufacturer_name}}
+        </li>
+        <li  class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Serial:</span> {{bikeDetails?.serial || "data not avaibale"}}
+        </li>
+        <li  class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Model:</span> {{bikeDetails?.frame_model || "data not avaibale"}}
+        </li>
+        <li  class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Color:</span> {{bikeDetails?.frame_colors || "data not avaibale"}}
+        </li>
+        <li *ngIf="bikeDetails?.stolen" class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Stolen date:</span> {{bikeDetails?.stolen_record?.date_stolen | date: 'MMM d, y'}}
+        </li>
+        <li *ngIf="bikeDetails?.stolen" class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Stolen location:</span> {{bikeDetails?.stolen_location}}
+        </li>
+        <li *ngIf="bikeDetails?.stolen" class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Theft Description:</span> {{bikeDetails?.stolen_record?.theft_description || "data not avaibale"}}
+        </li>
+        <li *ngIf="bikeDetails?.stolen" class="list-group-item bike-details-list__item">
+          <span class="bike-details-list__item__title">Police Report Number:</span> {{bikeDetails?.stolen_record?.police_report_number || "data not avaibale"}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <a href="#" class="btn btn-info" routerLink="/">Back to list</a>
+</div>

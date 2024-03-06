@@ -1,27 +1,27 @@
-# BikeSearch
+Introduction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Welcome to the Bike search app! This repository contains a frontend application designed to provide users with a seamless experience of bike searching. Leveraging an open Bikeindex.org API provided, this app brings you search infromation about bike.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application allows users to:
 
-## Build
+* View list of bikes.
+* Click on a bike to view details on another screen.
+* Search for a bike to get its details.
+* Experience a responsive and mobile-friendly interface.
+* Enjoy a simple yet eye-catching UI design.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Architecture
 
-## Running unit tests
+The application is built using Angular v17.2.0, a progressive JavaScript framework for building user interfaces.The application architecture follows best practices to ensure clean code, reusability, and maintainability.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Botstrap application Locally
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* clone repository
+* run `npm install` from root
+* run `npm run start` to start application on local server
+* application will be running on [http://localhost:4200/](http://localhost:4200/)
+* for running Unit tests run `npm run test`

@@ -1,0 +1,27 @@
+<div *ngIf="errorMessage" class="text-warning">
+  {{ errorMessage }}
+</div>
+
+<ng-container *ngIf="bikes && !bikes.length && !errorMessage">
+  <p class="text-warning">Not found. Please search another location</p>
+</ng-container>
+
+<app-search *ngIf="!errorMessage"></app-search>
+
+<div class="layout-center" *ngIf="isLoading">
+  Loading...
+</div>
+<ng-container *ngIf="!isLoading && bikes.length">
+<div class="bike-list" *ngFor="let bike of bikes;" [routerLink]="['./' + bike.id]">
+  <h2 class="bike-list__header">
+    {{ bike.title }}
+  </h2>
+
+  <div class="row bike-list__description">
+    <div class="col-4 name">{{ bike.manufacturer_name }}</div>
+    <div class="col-4 seria"> {{ bike.serial }}</div>
+    <div class="col-4">{{ bike.stolen_location }}</div>
+  </div>
+</div>
+</ng-container>
+
